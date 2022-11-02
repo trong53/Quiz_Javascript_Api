@@ -3,7 +3,6 @@ let rejouer = document.querySelector('.rejouer');
 rejouer.onclick = function(){
     let page_result = document.getElementById('page-result');
     let selected = document.querySelectorAll('#main_homepage select');
-    console.log(selected)
 
     page_result.style.display = "none";
     homepage.style.display = "block";

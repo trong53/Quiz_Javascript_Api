@@ -7,7 +7,6 @@ import {loadQuestion} from './assets/Js/loadQuestion.js';
 import {answerHandler} from './assets/Js/answerHandler.js';
 import {responsesParam} from './assets/Js/constant.js';
 import {timeModeParam} from './assets/Js/constant.js';
-import {correctAnswerParam} from './assets/Js/constant.js';
 import './assets/Js/getQuizParam.js';
 
 let commencer = document.getElementById('commencer');
@@ -77,7 +76,7 @@ function QuestionAnswerHandler (questionNumber, data, responsesParam, category, 
     
     if (questionNumber > 10) {
 
-        resultHandler(data, correctAnswerParam);
+        resultHandler(data);
         document.getElementById('page-questions').style.display = "none";
         document.getElementById('page-result').style.display = "block";
 

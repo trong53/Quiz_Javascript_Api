@@ -12,12 +12,3 @@ export const timeModeParam = {
     normal : 20,
     speed : 10
 }
-
-export const correctAnswerParam = [
-    ['answer_a_correct', 'answer_a'],
-    ['answer_b_correct', 'answer_b'],
-    ['answer_c_correct', 'answer_c'],
-    ['answer_d_correct', 'answer_d'],
-    ['answer_e_correct', 'answer_e'],
-    ['answer_f_correct', 'answer_f']
-];

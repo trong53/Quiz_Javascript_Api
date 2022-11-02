@@ -1,21 +1,17 @@
-export function resultHandler(data, Param) {
+export function resultHandler(data) {
     let score = 0;
     let correctResponse;
     let correction = document.querySelector('.containeranswer');
 
     for (let question = 1 ; question <= 10 ; question++) {
-            let stockResponse = localStorage.getItem('Answer_'+question)
+        let stockResponse = localStorage.getItem('Answer_'+question)
             
-            // correctResponse = data[question-1].correct_answer;
-
-            // if (correctResponse == null) {
-                for (let answer in data[question-1].correct_answers) {
-                    if (data[question-1].correct_answers[answer] == 'true') {
-                        correctResponse = answer.slice(0,8);
-                    }
-                }
-            // }
-        console.log(correctResponse);
+        for (let answer in data[question-1].correct_answers) {
+            if (data[question-1].correct_answers[answer] == 'true') {
+                correctResponse = answer.slice(0,8);
+            }
+        }
+        
         if (stockResponse === correctResponse) {
             score++;
         } else {
