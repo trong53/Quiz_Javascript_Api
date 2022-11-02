@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <title>Quizz</title>
+</head>
+<body>
+    <!-- -------------------------------------------------------------------------------- -->
+    <div id="homepage">
+        <div id="main_homepage">
+            <div class="logo">QuiZz</div>
+
+            <label for="pseudo">
+                <input type="text" id="pseudo" name="Pseudo" placeholder="Pseudo">
+            </label>
+
+            <label for="category" id="label">
+                <select name="category" id="category">
+                    <option value="selected" class="select">Catégorie</option>
+                    <option value="Linux">Linux</option>
+                    <option value="PHP">PHP</option>
+                    <option value="HTML">HTML</option>
+                    <option value="WordPress">WordPress</option>
+                    <option value="JavaScript">Javascript</option>
+                    <option value="MySQL">MySQL</option>
+                </select>
+            </label>
+
+            <label for="difficulty" id="label">
+                <select name="difficulty" id="difficulty">
+                    <option value="selected" class="select">Difficulté</option>
+                    <option value="Easy">Facile</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Difficile</option>
+                </select>
+            </label>
+            
+            <label for="mode" id="label">
+                <select name="mode" id="mode">
+                    <option value="selected" class="select">Mode</option>
+                    <option value="relax">Relax</option>
+                    <option value="normal">Normal</option>
+                    <option value="speed">Speed</option>
+                </select>
+            </label>
+
+            <div id="commencer"> Commencer </div>
+        </div>
+    </div>
+    <!-- -------------------------------------------------------------------------------- -->
+
+    <div id="page-questions">
+
+        <header class="question_header">
+            <div class="logo">QuiZz</div>
+            <div class="category"></div>
+            <div class="timer"> <div></div> </div>
+        </header>
+
+        <main class="question_main">
+
+            <section class="question">
+                <h2></h2>
+                <p></p>
+            </section>
+
+            <div class="answer">
+                <div class="response" id="answer_a"></div>
+                <div class="response" id="answer_b"></div>
+                <div class="response" id="answer_c"></div>
+                <div class="response" id="answer_d"></div>
+                <div class="response" id="answer_e"></div>
+                <div class="response" id="answer_f"></div>
+            </div>
+
+            <div class="question_validate"> Valider </div>
+
+        </main>
+    </div>
+    <!-- -------------------------------------------------------------------------------- -->
+
+    <div id="page-result">
+        <div class="fondreponses">
+            <header class="headeranswer">
+                <h1 class="logoanswer1">QuiZz</h1>
+                <h2 class="logoanswer2"> </h2>
+            </header>
+            <div class="bigcontainer">
+                <div class="reponse">
+                    <h3>
+                        <span id="user-pseudo"></span>. 
+                        Vous avez <br> 
+                        <span class="note"></span> 
+                        bonnes réponses.
+                    </h3>
+                </div>
+                <div id="answer">
+                    <h4 class="titrecorrection">Correction</h4>
+                    <div class="containeranswer"></div>
+                    <div class="rejouer">Rejouer</div>      
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./main.js" type="module"></script>
+</body>
+</html>

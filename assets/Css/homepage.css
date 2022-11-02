@@ -1,0 +1,93 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    text-decoration: none;
+}
+#homepage {
+    display: block;
+}
+#main_homepage {
+    width: 100vw;
+    /* height : 100vh; */
+    background-color: #01001B;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.logo {
+    color: #E7E3FF;
+    text-shadow:  0 0 15px #B0A4FA;
+    font-size: 5.5rem;
+    font-weight: bold;
+    font-family: 'exo 2', sans-serif;
+    padding-bottom: 20px;
+}
+
+#pseudo::placeholder {
+    color: white;
+}
+label {
+    width: 100%;
+    text-align: center;
+}
+select, #pseudo, #commencer {
+    width: 55%;  
+    background-color: #01012c;
+    border: 5px solid #B0A4FA;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    appearance: none;
+    margin : 10px 0;
+}
+#category, #difficulty, #mode {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='150' viewBox='2 3 5 40' width='150' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+}
+#commencer {
+    margin: 20px 0;
+}
+select, option, #value {
+    text-align: center;
+}
+#commencer:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: #1e66c4;
+    cursor: pointer;
+}
+
+@media screen and (min-width:776px) and (max-width:1024px) {
+
+    select, #pseudo, #commencer {
+        width: 60%;
+    }
+} 
+@media screen and (min-width:500px) and (max-width:775px) {
+
+    select, #pseudo, #commencer {
+        width: 70%;
+        font-size: 1.7rem; 
+    }
+    #category, #difficulty, #mode {
+        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='100' viewBox='6 0 1 40' width='100' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    }
+} 
+@media screen and (min-width:320px) and (max-width:499px) {
+
+    select, #pseudo, #commencer {
+        width: 80%;
+        font-size: 1.5rem; 
+    }
+    #category, #difficulty, #mode {
+        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='100' viewBox='3 0 1 50' width='80' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    } 
+}
