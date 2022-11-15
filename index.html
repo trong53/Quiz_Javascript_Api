@@ -12,7 +12,12 @@
 </head>
 <body>
     <!-- -------------------------------------------------------------------------------- -->
+    <div id="star-small"></div>
+    <div id="star-medium"></div>
+    <div id="star-big"></div>
+
     <div id="homepage">
+
         <div id="main_homepage">
             <div class="logo">QuiZz</div>
 
@@ -53,6 +58,14 @@
             <div id="commencer"> Commencer </div>
         </div>
     </div>
+
+    <!-- -------------------------------------------------------------------------------- -->
+    
+    <div id="fetch404">
+        <div id="closeError">&times;</div>
+        <div id="messageError"></div>
+    </div>
+
     <!-- -------------------------------------------------------------------------------- -->
 
     <div id="page-questions">
@@ -60,13 +73,13 @@
         <header class="question_header">
             <div class="logo">QuiZz</div>
             <div class="category"></div>
-            <div class="timer"> <div></div> </div>
+            <div class="timer"> <div class="timecircle"> </div> <div id="timeCount"></div> </div>
         </header>
 
         <main class="question_main">
 
             <section class="question">
-                <h2></h2>
+                <h2>Pret ?!</h2>
                 <p></p>
             </section>
 
@@ -94,22 +107,25 @@
             <div class="bigcontainer">
                 <div class="reponse">
                     <h3>
-                        <span id="user-pseudo"></span>. 
-                        Vous avez <br> 
-                        <span class="note"></span> 
-                        bonnes réponses.
+                        <span id="emoji"> </span>
+                        <span id="congrat_mention"> </span>
+                        <span id="gif"> </span>
+                        <span id="user-pseudo"></span>. <br> Vous avez <br>
+                        <span class="note"> </span> bonnes réponses.
                     </h3>
                 </div>
                 <div id="answer">
                     <h4 class="titrecorrection">Correction</h4>
-                    <div class="containeranswer"></div>
+                    <div class="containeranswer">
+                        <div id="ligne"></div>
+                    </div>
                     <div class="rejouer">Rejouer</div>      
                 </div>
             </div>
         </div>
     </div>
     
-
     <script src="./main.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 </body>
 </html>

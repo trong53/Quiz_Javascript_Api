@@ -1,3 +1,41 @@
+import { showResult } from "./showResult.js";
+import { appendDom } from "./appendDom.js";
+
+export function resultHandler(data) {
+    let score = 0, questions = [], correct_response;
+
+    for (const key in data) {
+
+        questions[key] = data[key]['question'];
+
+        for (let answerkey in data[key].correct_answers) {
+            if (data[key].correct_answers[answerkey] == 'true') {
+                correct_response = answerkey;
+            }
+        }
+
+        if (correct_response.slice(0, 8) == (window.localStorage.getItem('Answer_' + (parseInt(key) + 1)))) {
+            score++;
+        } else {
+            appendDom(key, questions, correct_response, data)
+        }
+    }
+
+    showResult(score);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 export function resultHandler(data) {
     let score = 0;
     let correctResponse;
@@ -30,3 +68,4 @@ export function resultHandler(data) {
     }
     document.querySelector('.note').innerText = score + '/10';    
 }
+*/

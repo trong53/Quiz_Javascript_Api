@@ -1,13 +1,14 @@
 import './assets/Css/homepage.css';
+import './assets/Css/star_background.css';
 import './assets/Css/page_question.css';
 import './assets/Css/page_result.css';
-import './assets/Js/rejouer.js';
-import {resultHandler} from './assets/Js/resultHandler.js';
-import {loadQuestion} from './assets/Js/loadQuestion.js';
-import {answerHandler} from './assets/Js/answerHandler.js';
+
+import {showErrorFetch} from './assets/Js/showErrorFetch.js';
 import {responsesParam} from './assets/Js/constant.js';
 import {timeModeParam} from './assets/Js/constant.js';
+import {QuestionAnswerHandler} from './assets/Js/QuestionAnswerHandler.js';
 import './assets/Js/getQuizParam.js';
+import './assets/Js/rejouer.js';
 
 let commencer = document.getElementById('commencer');
 const ENDPOINT = "https://quizapi.io/api/v1/questions";
@@ -26,13 +27,14 @@ commencer.onclick = function() {
         || timeMode == null || timeMode == 'selected'
         ) 
     {
-        alert ("Pseudo, Category, Difficulty and Mode : can not be empty");
+        let errorParam = "All fields - pseudo, category, difficulty and mode - can not be empty";
+        showErrorFetch(errorParam);
 
     } else {
 
         document.querySelector('.category').innerText = category;
         document.querySelector('.logoanswer2').innerText = category;
-        document.querySelector('#user-pseudo').innerText = localStorage.getItem('pseudo').trim().toUpperCase();
+        document.querySelector('#user-pseudo').innerText = localStorage.getItem('pseudo').trim();
     
         let link = ENDPOINT + `?tags=${category}&difficulty=${difficulty}&limit=10`;
 
@@ -44,11 +46,14 @@ commencer.onclick = function() {
                 'X-api-key': 'q11SR189wd2MALuQhAXEpR3mFRSrBTFSPdvrqqMH'
                 }
         })
-        .then(function (response) {
-            if (response.status != 404) {
-                return response.json();
+        .then(async function (response) {
+
+            const data = await response.json();
+
+            if (response.ok) {
+                return data;
             }else{
-                reject();
+                return Promise.reject(response.status);
             }
         })
         .then(function (data) {
@@ -64,58 +69,9 @@ commencer.onclick = function() {
                 QuestionAnswerHandler (questionNumber, data, responsesParam, category, time);
             } 
         })
-        .catch(function(err){
-            alert ("Il n'y a pas de données, merci de choisir un autre niveau de difficulté");
-            console.error(err);
+        .catch(function(error){
+            let errorFetch = "Error " + error + " !<br/>Il n'y a pas de données, merci de choisir un autre niveau de difficulté";
+            showErrorFetch(errorFetch);
         })
     }
-}
-
-
-function QuestionAnswerHandler (questionNumber, data, responsesParam, category, time) {
-    
-    if (questionNumber > 10) {
-
-        resultHandler(data);
-        document.getElementById('page-questions').style.display = "none";
-        document.getElementById('page-result').style.display = "block";
-
-    } else {
-
-        loadQuestion(questionNumber, data, responsesParam);
-        
-        let second = time;
-        let timer = setInterval(function() {
-            document.querySelector('.timer div').innerText = second;
-            second--;
-            if (second == -1) {
-
-                if (!localStorage.getItem('Answer_' + questionNumber)) {
-                    localStorage.setItem('Answer_' + questionNumber, '');
-                }
-                
-                clearInterval(timer);
-
-                for(let j=0; j<=5; j++) {
-                    document.getElementsByClassName('response')[j].classList.remove('response-click');
-                }
-
-                questionNumber++;
-                QuestionAnswerHandler (questionNumber, data, responsesParam, category, time);
-            }
-        },1000);
-
-        answerHandler(questionNumber);
-
-        document.querySelector('.question_validate').onclick = function(){
-            questionNumber++;
-            
-            for(let j=0; j<=5; j++) {
-                document.getElementsByClassName('response')[j].classList.remove('response-click');
-            }
-            clearInterval(timer);
-            QuestionAnswerHandler (questionNumber, data, responsesParam, category, time);
-        }
-    }
-
 }

@@ -14,8 +14,7 @@ rejouer.onclick = function(){
         selected[select].value = 'selected';
     }
 
-    document.querySelector('.containeranswer').innerHTML = '';
-
+    document.querySelector('#ligne').innerHTML = '';
+    document.getElementById("gif").innerHTML= '';
     localStorage.clear();
 }
-
