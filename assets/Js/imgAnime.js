@@ -1,7 +1,7 @@
 export function imgAnime(img) {
-    var imgSpanElement = document.getElementById("gif");
+    let imgSpanElement = document.getElementById("gif_Image_Anime");
 
-    var imgAnimElement = document.createElement("img");
+    let imgAnimElement = document.createElement("img");
     imgAnimElement.style.width= "50px";
     imgAnimElement.style.height= "50px";
     imgAnimElement.src = "../assets/img/"+img+".gif";

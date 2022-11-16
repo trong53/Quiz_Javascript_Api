@@ -5,6 +5,9 @@
     font-family: "Roboto";
     text-decoration: none;
 }
+body {
+    width : 100vw;
+}
 #homepage {
     display: block;
 }

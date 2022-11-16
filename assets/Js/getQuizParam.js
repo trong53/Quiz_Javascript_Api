@@ -23,6 +23,6 @@ timeModeElement.onchange = function () {
     window.localStorage.setItem('mode', this.value);
 }
 
-window.onbeforeunload = function() {
-    return 'You want to quit ?';       // value of return is not important(true, false, string), the browser uses his own message to avoid all abuses of alert messages 
-};
+// window.onbeforeunload = function() {
+//     return 'You want to quit ?';       // value of return is not important(true, false, string), the browser uses his own message to avoid all abuses of alert messages 
+// };

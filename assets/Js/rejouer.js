@@ -15,6 +15,7 @@ rejouer.onclick = function(){
     }
 
     document.querySelector('#ligne').innerHTML = '';
-    document.getElementById("gif").innerHTML= '';
+    document.getElementById("gif_Image_Anime").innerHTML = '';
+
     localStorage.clear();
 }
