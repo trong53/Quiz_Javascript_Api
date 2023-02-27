@@ -1,4 +1,4 @@
-Projet Quiz : permet de maîtriser le Javascript en utilisant le fetch API pour récupérer les données d'API Quiz. J'ai codé les pages par HTML et CSS, puis utilisé le Javascript pour récupérer les données d'API et manipuler la transition des pages, des questions, calculer le score
+Projet Quiz : permet de maîtriser le Javascript en utilisant le fetch API pour récupérer les données d'API Quiz. Après l'intégration avec HTML et CSS, j'ai utilisé le Javascript et le Fetch API pour récupérer les données d'API Quiz en ligne, et ensuite manipulé la transition des pages, des questions, calculé le score.
 
 Link of site :    https://trong53.github.io/Quizz/
 
