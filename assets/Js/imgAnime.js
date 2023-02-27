@@ -4,7 +4,7 @@ export function imgAnime(img) {
     let imgAnimElement = document.createElement("img");
     imgAnimElement.style.width= "50px";
     imgAnimElement.style.height= "50px";
-    imgAnimElement.src = "../assets/img/"+img+".gif";
+    imgAnimElement.src = "/Quizz/Img/"+img+".gif";
     
     imgSpanElement.appendChild(imgAnimElement);
 }
